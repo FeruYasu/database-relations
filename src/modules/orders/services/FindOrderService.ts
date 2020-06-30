@@ -20,12 +20,10 @@ class FindOrderService {
 
     @inject('CustomersRepository')
     private customersRepository: ICustomersRepository,
-  ) { }
+  ) {}
 
   public async execute({ id }: IRequest): Promise<Order | undefined> {
     const checkOrderExists = await this.ordersRepository.findById(id);
-
-    console.log(checkOrderExists);
 
     return checkOrderExists;
   }
